@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08F98467F8B58EBA93010122 /* Pods_BaldwinBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73902E196BA352EBDD1BD5B0 /* Pods_BaldwinBot.framework */; };
 		3E3096F821F63A3600721FED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3096F721F63A3600721FED /* AppDelegate.swift */; };
 		3E3096FA21F63A3600721FED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3096F921F63A3600721FED /* ViewController.swift */; };
 		3E3096FD21F63A3600721FED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E3096FB21F63A3600721FED /* Main.storyboard */; };
 		3E3096FF21F63A3600721FED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E3096FE21F63A3600721FED /* Assets.xcassets */; };
 		3E30970221F63A3600721FED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E30970021F63A3600721FED /* LaunchScreen.storyboard */; };
+		3E8F082621F6553500C32479 /* ControlBaldwinBot.py in Resources */ = {isa = PBXBuildFile; fileRef = 3E8F082521F6553500C32479 /* ControlBaldwinBot.py */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		3E3096FE21F63A3600721FED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E30970121F63A3600721FED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E30970321F63A3600721FED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E8F082521F6553500C32479 /* ControlBaldwinBot.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = ControlBaldwinBot.py; sourceTree = SOURCE_ROOT; };
+		73902E196BA352EBDD1BD5B0 /* Pods_BaldwinBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaldwinBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8199BE87B82879A0E6ADDAAE /* Pods-BaldwinBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaldwinBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaldwinBot/Pods-BaldwinBot.release.xcconfig"; sourceTree = "<group>"; };
+		CF62F2233ED02A04967695E4 /* Pods-BaldwinBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaldwinBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaldwinBot/Pods-BaldwinBot.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08F98467F8B58EBA93010122 /* Pods_BaldwinBot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				3E3096F621F63A3600721FED /* BaldwinBot */,
 				3E3096F521F63A3600721FED /* Products */,
+				E942593844BED186A0F7EC0B /* Pods */,
+				748D361347A3D73AA60B0D7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,8 +69,26 @@
 				3E3096FE21F63A3600721FED /* Assets.xcassets */,
 				3E30970021F63A3600721FED /* LaunchScreen.storyboard */,
 				3E30970321F63A3600721FED /* Info.plist */,
+				3E8F082521F6553500C32479 /* ControlBaldwinBot.py */,
 			);
 			path = BaldwinBot;
+			sourceTree = "<group>";
+		};
+		748D361347A3D73AA60B0D7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73902E196BA352EBDD1BD5B0 /* Pods_BaldwinBot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E942593844BED186A0F7EC0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF62F2233ED02A04967695E4 /* Pods-BaldwinBot.debug.xcconfig */,
+				8199BE87B82879A0E6ADDAAE /* Pods-BaldwinBot.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E30970621F63A3600721FED /* Build configuration list for PBXNativeTarget "BaldwinBot" */;
 			buildPhases = (
+				812AE3EE3D0ECA93B4222CB5 /* [CP] Check Pods Manifest.lock */,
 				3E3096F021F63A3600721FED /* Sources */,
 				3E3096F121F63A3600721FED /* Frameworks */,
 				3E3096F221F63A3600721FED /* Resources */,
+				7CA648AF0D518CADC5A5C826 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,12 +152,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E30970221F63A3600721FED /* LaunchScreen.storyboard in Resources */,
+				3E8F082621F6553500C32479 /* ControlBaldwinBot.py in Resources */,
 				3E3096FF21F63A3600721FED /* Assets.xcassets in Resources */,
 				3E3096FD21F63A3600721FED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CA648AF0D518CADC5A5C826 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BaldwinBot/Pods-BaldwinBot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyTimer/SwiftyTimer.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaMQTT.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyTimer.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaldwinBot/Pods-BaldwinBot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		812AE3EE3D0ECA93B4222CB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaldwinBot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3E3096F021F63A3600721FED /* Sources */ = {
@@ -280,6 +353,7 @@
 		};
 		3E30970721F63A3600721FED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF62F2233ED02A04967695E4 /* Pods-BaldwinBot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +372,7 @@
 		};
 		3E30970821F63A3600721FED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8199BE87B82879A0E6ADDAAE /* Pods-BaldwinBot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

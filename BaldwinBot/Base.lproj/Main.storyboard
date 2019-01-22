@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,128 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BaldwinBot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="aoT-o5-Fb2">
+                                <rect key="frame" x="69" y="84" width="237" height="283"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="niR-NL-3a9">
+                                        <rect key="frame" x="0.0" y="97" width="69" height="89"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                        <state key="normal" title="⬅️"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jgR-fL-1vM" appends="YES" id="dlL-sQ-aIb"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="lyp-dc-Yge">
+                                        <rect key="frame" x="84" y="0.0" width="69" height="283"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okY-DM-g0q">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="89"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                <state key="normal" title="⬆️"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="DKh-TK-ngW" appends="YES" id="Xo2-TQ-pqj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apC-zU-NiM">
+                                                <rect key="frame" x="0.0" y="97" width="69" height="89"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                <state key="normal" title="⏹"/>
+                                                <connections>
+                                                    <action selector="stopButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y3d-pL-ZNy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQX-Ld-IUg">
+                                                <rect key="frame" x="0.0" y="194" width="69" height="89"/>
+                                                <gestureRecognizers/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                <state key="normal" title="⬇️"/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="aEP-7J-Swz" appends="YES" id="Obm-EA-otG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZZ-Vf-anh">
+                                        <rect key="frame" x="168" y="97" width="69" height="89"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                        <state key="normal" title="➡️"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="euj-V5-Lr0" appends="YES" id="csg-u0-Usk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yuh-Wn-zig">
+                                <rect key="frame" x="108" y="417" width="159" height="88"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1J-bC-YFN">
+                                        <rect key="frame" x="19" y="0.0" width="121" height="30"/>
+                                        <state key="normal" title="Connect to Robot"/>
+                                        <connections>
+                                            <action selector="connectPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wCo-SI-k0D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="872-h4-bXL">
+                                        <rect key="frame" x="0.0" y="58" width="159" height="30"/>
+                                        <state key="normal" title="Disconnect from Robot"/>
+                                        <connections>
+                                            <action selector="disconnectPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pfD-j4-Z5L"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Yuh-Wn-zig" firstAttribute="top" secondItem="aoT-o5-Fb2" secondAttribute="bottom" constant="50" id="72c-Be-8Qm"/>
+                            <constraint firstItem="aoT-o5-Fb2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HmZ-2z-deW"/>
+                            <constraint firstItem="aoT-o5-Fb2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="VBM-sr-Mj6"/>
+                            <constraint firstItem="Yuh-Wn-zig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wBn-9i-aCu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="connectButton" destination="X1J-bC-YFN" id="0eh-hT-UOz"/>
+                        <outlet property="disconnectButton" destination="872-h4-bXL" id="aja-yb-ejC"/>
+                        <outlet property="downButton" destination="CQX-Ld-IUg" id="Bff-nK-QV4"/>
+                        <outlet property="leftButton" destination="niR-NL-3a9" id="np8-WM-wJb"/>
+                        <outlet property="rightButton" destination="oZZ-Vf-anh" id="9W7-Rx-KgT"/>
+                        <outlet property="stopButton" destination="apC-zU-NiM" id="etN-O6-6hF"/>
+                        <outlet property="upButton" destination="okY-DM-g0q" id="Vpo-NV-dM2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer delaysTouchesEnded="NO" allowableMovement="10" minimumPressDuration="0.0" id="aEP-7J-Swz">
+                    <connections>
+                        <action selector="downPressed:" destination="BYZ-38-t0r" id="EIp-t5-f6F"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer delaysTouchesEnded="NO" allowableMovement="10" minimumPressDuration="0.0" id="DKh-TK-ngW">
+                    <connections>
+                        <action selector="upButtonPressed:" destination="BYZ-38-t0r" id="FPX-dR-xrO"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer delaysTouchesEnded="NO" allowableMovement="10" minimumPressDuration="0.0" id="jgR-fL-1vM">
+                    <connections>
+                        <action selector="leftPressed:" destination="BYZ-38-t0r" id="WWr-Nc-854"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer delaysTouchesEnded="NO" allowableMovement="10" minimumPressDuration="0.0" id="euj-V5-Lr0">
+                    <connections>
+                        <action selector="rightPressed:" destination="BYZ-38-t0r" id="6aG-gk-h9o"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
