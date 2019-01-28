@@ -26,8 +26,8 @@ mqttClient = mqtt.Client(clientName)
 # until the bot moves roughly straight. The #s below reflect the bot I'm working with.
 # It's probably best to start both trim values at 0 and adjust from there.
 
-LEFT_TRIM   = 20
-RIGHT_TRIM  = 0
+LEFT_TRIM   = 0
+RIGHT_TRIM  = 20
 
 def connectionStatus(client, userdata, flags, rc):
     mqttClient.subscribe("rpi/gpio")

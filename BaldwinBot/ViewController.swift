@@ -59,15 +59,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func leftPressed(_ gesture: UILongPressGestureRecognizer) {
-        messageString = "right"
-        currentButton = rightButton
+        messageString = "left"
+        currentButton = leftButton
         duration = turnDuration
         sendMessage(gesture: gesture)
     }
     
     @IBAction func rightPressed(_ gesture: UILongPressGestureRecognizer) {
-        messageString = "left"
-        currentButton = leftButton
+        messageString = "right"
+        currentButton = rightButton
         duration = turnDuration
         sendMessage(gesture: gesture)
     }
