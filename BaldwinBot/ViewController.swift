@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var disconnectButton: UIButton!
     
     // let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "192.168.0.X", port: 1883)
+    // Uncomment line below when using from home
     let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "10.0.1.186", port: 1883)
+    // Line below is for school
+    // let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "136.167.122.211", port: 1883)
     var timer: Timer?
     var messageString = "stop"
     var moveDuration = 0.05
