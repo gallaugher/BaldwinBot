@@ -91,13 +91,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcR-rm-o3e">
+                                <rect key="frame" x="108" y="537" width="159" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="Lh3-lp-5yv"/>
+                                    <constraint firstAttribute="height" constant="30" id="kwu-ge-IJy"/>
+                                </constraints>
+                                <state key="normal" title="Send Test Message"/>
+                                <connections>
+                                    <action selector="testButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fqd-7u-BiO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Yuh-Wn-zig" firstAttribute="top" secondItem="aoT-o5-Fb2" secondAttribute="bottom" constant="50" id="72c-Be-8Qm"/>
+                            <constraint firstItem="XcR-rm-o3e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="88k-jh-PNL"/>
                             <constraint firstItem="aoT-o5-Fb2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HmZ-2z-deW"/>
                             <constraint firstItem="aoT-o5-Fb2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="VBM-sr-Mj6"/>
+                            <constraint firstItem="XcR-rm-o3e" firstAttribute="top" secondItem="Yuh-Wn-zig" secondAttribute="bottom" constant="32" id="syN-lb-8Qo"/>
                             <constraint firstItem="Yuh-Wn-zig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wBn-9i-aCu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -134,7 +147,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="140" y="132.68365817091455"/>
+            <point key="canvasLocation" x="140" y="132.26600985221674"/>
         </scene>
     </scenes>
 </document>

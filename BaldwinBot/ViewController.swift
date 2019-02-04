@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     // let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "192.168.0.X", port: 1883)
     // Uncomment line below when using from home
-    let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "10.0.1.186", port: 1883)
+    let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "10.0.1.9", port: 1883)
     // Line below is for school
     // let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "136.167.122.211", port: 1883)
     var timer: Timer?
@@ -90,6 +90,12 @@ class ViewController: UIViewController {
     
     @IBAction func disconnectPressed(_ sender: UIButton) {
         mqttClient.disconnect()
+    }
+    
+    @IBAction func testButtonPressed(_ sender: UIButton) {
+        messageString = "TestMsg"
+        mqttClient.publish("rpi/gpio", withString: messageString)
+        print(messageString)
     }
 }
 

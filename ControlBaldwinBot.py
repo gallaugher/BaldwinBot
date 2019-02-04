@@ -12,7 +12,7 @@ kit = MotorKit()
 
 """
 # Import the Robot.py file (must be in the same directory as this file!).
-import Robot
+# import Robot
 
 moveDuration = 0.05 # each move will take 1/20th (0.05) of a second.
 turnDuration = 0.02 # each turn will take 1/50th (0.02) of a second.
@@ -23,7 +23,8 @@ turnSpeed = 200
 # Added as part of MQTT
 clientName = "RPI"
 # HOME
-serverAddress = "10.0.1.186"
+#serverAddress = "10.0.1.186"
+serverAddress = "baldwinbot"
 # BC
 # serverAddress = "136.167.122.187"
 # Instantiate Eclipse Paho as mqttClient
@@ -34,7 +35,7 @@ mqttClient = mqtt.Client(clientName)
 # It's probably best to start both trim values at 0 and adjust from there.
 
 # out of 1.0 full power.
-LEFT_TRIM   = -0.01
+LEFT_TRIM   = -0.5
 RIGHT_TRIM  = 0.0
 
 leftSpeed = 1.0 + LEFT_TRIM
@@ -53,12 +54,15 @@ def connectionStatus(client, userdata, flags, rc):
 
 def messageDecoder(client, userdata, msg):
     message = msg.payload.decode(encoding='UTF-8')
-    
+
     if message == "up":
         # gpio.output(21, gpio.HIGH)
         #robot.forward(moveSpeed, moveDuration)   # Move forward at speed 150 for 1/10th of a second.
-        kit.motor1.throttle = leftSpeed
-        kit.motor2.throttle = rightSpeed
+        kit.motor1.throttle = 0.5
+        kit.motor2.throttle = 1.0
+#        kit.motor1.throttle = leftSpeed
+#        kit.motor2.throttle = rightSpeed
+        print(leftSpeed,rightSpeed)
         time.sleep(duration)
         # You need to stop the bot's motion, otherwise wheels will keep spinning
         # kit.motor1.throttle = 0.0
@@ -98,6 +102,8 @@ def messageDecoder(client, userdata, msg):
         # You need to stop the bot's motion, otherwise wheels will keep spinning
         # kit.motor1.throttle = 0.0
         # kit.motor2.throttle = 0.0
+    elif message == "TestMsg":
+        print("** Test Message Pressed! **")
     else:
         print("?!? Unknown message?!?")
 
