@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  BaldwinBot
 //
-//  Created by John Gallaugher on 1/21/19.
+//  Created by John Gallaugher on 2/9/19.
 //  Copyright © 2019 John Gallaugher. All rights reserved.
 //
 
@@ -10,92 +10,48 @@ import UIKit
 import CocoaMQTT
 
 class ViewController: UIViewController {
-    @IBOutlet weak var upButton: UIButton!
-    @IBOutlet weak var downButton: UIButton!
-    @IBOutlet weak var leftButton: UIButton!
-    @IBOutlet weak var rightButton: UIButton!
-    @IBOutlet weak var stopButton: UIButton!
     
-    @IBOutlet weak var connectButton: UIButton!
-    @IBOutlet weak var disconnectButton: UIButton!
+    var stop = "stop"
+    var direction: [Int: String] = [0: "forward",
+                                    1: "backward",
+                                    2: "left",
+                                    3: "right",
+                                    4: "hello",
+                                    5: "niceandsmart",
+                                    6: "fancylearningapps",
+                                    7: "takeaflyer",
+                                    8: "seeyouinireland",
+                                    9: "thankyou",
+                                    10: "thanksalot",
+                                    11: "cheers",
+                                    12: "imjustarobot"]
     
-    // let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "192.168.0.X", port: 1883)
-    // Uncomment line below when using from home
-    let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "10.0.1.9", port: 1883)
-    // Line below is for school
-    // let mqttClient = CocoaMQTT(clientID: "iOS Device", host: "136.167.122.211", port: 1883)
-    var timer: Timer?
-    var messageString = "stop"
-    var moveDuration = 0.05
-    var turnDuration = 0.02
-    var duration: Double!
-    var currentButton: UIButton!
+    let mqttClient = CocoaMQTT(clientID: "BaldwinBotApp", host: "136.167.122.234", port: 1883)
+//     let mqttClient = CocoaMQTT(clientID: "BaldwinBotApp", host: "baldwinbot", port: 1883)
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    func sendMessage(gesture: UILongPressGestureRecognizer) {
-        if gesture.state == .began {
-            currentButton.isHighlighted = true
-            timer = Timer.scheduledTimer(timeInterval: moveDuration, target: self, selector: #selector(handleTimer), userInfo: nil, repeats: true)
-        } else if gesture.state == .ended || gesture.state == .cancelled {
-            currentButton.isHighlighted = false
-            timer?.invalidate()
-            timer = nil
-            mqttClient.publish("rpi/gpio", withString: "stop")
-        }
-    }
-
-    @IBAction func upButtonPressed(_ gesture: UILongPressGestureRecognizer) {
-        messageString = "up"
-        currentButton = upButton
-        duration = moveDuration
-        sendMessage(gesture: gesture)
+    @IBAction func buttonDown(_ sender: UIButton) {
+        print("Sending message: \(direction[sender.tag]!)")
+        mqttClient.publish("baldwinbot/move", withString: direction[sender.tag]!)
     }
     
-    @IBAction func downPressed(_ gesture: UILongPressGestureRecognizer) {
-        messageString = "down"
-        currentButton = downButton
-        duration = moveDuration
-        sendMessage(gesture: gesture)
+    
+    @IBAction func buttonUp(_ sender: UIButton) {
+        print("Sending message: \(stop)")
+        mqttClient.publish("baldwinbot/move", withString: stop)
     }
     
-    @IBAction func leftPressed(_ gesture: UILongPressGestureRecognizer) {
-        messageString = "left"
-        currentButton = leftButton
-        duration = turnDuration
-        sendMessage(gesture: gesture)
+    @IBAction func talkButtonPressed(_ sender: UIButton) {
+        print("Sending message: \(direction[sender.tag]!)")
+        mqttClient.publish("baldwinbot/move", withString: direction[sender.tag]!)
     }
     
-    @IBAction func rightPressed(_ gesture: UILongPressGestureRecognizer) {
-        messageString = "right"
-        currentButton = rightButton
-        duration = turnDuration
-        sendMessage(gesture: gesture)
-    }
-    
-    @IBAction func stopButtonPressed(_ sender: UIButton) {
-        mqttClient.publish("rpi/gpio", withString: "stop")
-    }
-    
-    @objc func handleTimer(timer: Timer) {
-        mqttClient.publish("rpi/gpio", withString: messageString)
-        print(messageString)
-    }
-    
-    @IBAction func connectPressed(_ sender: UIButton) {
+    @IBAction func connectButtonPressed(_ sender: UIButton) {
         mqttClient.connect()
     }
     
-    @IBAction func disconnectPressed(_ sender: UIButton) {
-        mqttClient.disconnect()
-    }
-    
-    @IBAction func testButtonPressed(_ sender: UIButton) {
-        messageString = "TestMsg"
-        mqttClient.publish("rpi/gpio", withString: messageString)
-        print(messageString)
-    }
 }
 

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		08F98467F8B58EBA93010122 /* Pods_BaldwinBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73902E196BA352EBDD1BD5B0 /* Pods_BaldwinBot.framework */; };
+		3E24E7B62214AEF100EDB404 /* control-baldwinbot.py in Resources */ = {isa = PBXBuildFile; fileRef = 3E24E7B52214AEF100EDB404 /* control-baldwinbot.py */; };
+		3E24E7B82214AF1500EDB404 /* baldwinbot-mqttclient-service in Resources */ = {isa = PBXBuildFile; fileRef = 3E24E7B72214AF1500EDB404 /* baldwinbot-mqttclient-service */; };
+		3E24E7BA2214B64500EDB404 /* baldwinbottest.py in Resources */ = {isa = PBXBuildFile; fileRef = 3E24E7B92214B64500EDB404 /* baldwinbottest.py */; };
 		3E3096F821F63A3600721FED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3096F721F63A3600721FED /* AppDelegate.swift */; };
 		3E3096FA21F63A3600721FED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E3096F921F63A3600721FED /* ViewController.swift */; };
 		3E3096FD21F63A3600721FED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E3096FB21F63A3600721FED /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E24E7B52214AEF100EDB404 /* control-baldwinbot.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = "control-baldwinbot.py"; sourceTree = "<group>"; };
+		3E24E7B72214AF1500EDB404 /* baldwinbot-mqttclient-service */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "baldwinbot-mqttclient-service"; sourceTree = "<group>"; };
+		3E24E7B92214B64500EDB404 /* baldwinbottest.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = baldwinbottest.py; sourceTree = "<group>"; };
 		3E3096F421F63A3600721FED /* BaldwinBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaldwinBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E3096F721F63A3600721FED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E3096F921F63A3600721FED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +76,9 @@
 				3E30970021F63A3600721FED /* LaunchScreen.storyboard */,
 				3E30970321F63A3600721FED /* Info.plist */,
 				3E8F082521F6553500C32479 /* ControlBaldwinBot.py */,
+				3E24E7B52214AEF100EDB404 /* control-baldwinbot.py */,
+				3E24E7B72214AF1500EDB404 /* baldwinbot-mqttclient-service */,
+				3E24E7B92214B64500EDB404 /* baldwinbottest.py */,
 			);
 			path = BaldwinBot;
 			sourceTree = "<group>";
@@ -154,7 +163,10 @@
 				3E30970221F63A3600721FED /* LaunchScreen.storyboard in Resources */,
 				3E8F082621F6553500C32479 /* ControlBaldwinBot.py in Resources */,
 				3E3096FF21F63A3600721FED /* Assets.xcassets in Resources */,
+				3E24E7B82214AF1500EDB404 /* baldwinbot-mqttclient-service in Resources */,
 				3E3096FD21F63A3600721FED /* Main.storyboard in Resources */,
+				3E24E7B62214AEF100EDB404 /* control-baldwinbot.py in Resources */,
+				3E24E7BA2214B64500EDB404 /* baldwinbottest.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
